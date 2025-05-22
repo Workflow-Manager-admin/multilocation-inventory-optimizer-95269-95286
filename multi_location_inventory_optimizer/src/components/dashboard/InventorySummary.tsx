@@ -88,7 +88,7 @@ export default function InventorySummary({ data }: InventorySummaryProps) {
     <div className="mb-6">
       <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Inventory Overview</h2>
       
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {summaryCards.map((card) => (
           <Card key={card.id} className="border border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between">
