@@ -17,10 +17,6 @@ interface MainContainerProps {
    */
   children: React.ReactNode;
   /**
-   * Optional title for the page
-   */
-  pageTitle?: string;
-  /**
    * Optional user data for personalization
    */
   userData?: {
