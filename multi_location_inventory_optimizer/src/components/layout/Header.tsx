@@ -7,6 +7,7 @@
  */
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { User } from '@/types';
 
 interface HeaderProps {
@@ -75,9 +76,11 @@ export default function Header({ user, onToggleSidebar }: HeaderProps) {
                   <span className="sr-only">Open user menu</span>
                   <div className="h-8 w-8 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
                     {user?.avatar ? (
-                      <img 
+                      <Image 
                         src={user.avatar} 
                         alt={`${user.name}'s avatar`} 
+                        width={32}
+                        height={32}
                         className="h-full w-full object-cover"
                       />
                     ) : (
