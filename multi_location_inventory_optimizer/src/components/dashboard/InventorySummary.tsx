@@ -103,7 +103,7 @@ export default function InventorySummary({ data }: InventorySummaryProps) {
             
             {card.badge && (
               <div className="mt-3">
-                <Badge variant={card.badge.variant as any} size="sm">
+                <Badge variant={card.badge.variant as 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'} size="sm">
                   {card.badge.text}
                 </Badge>
               </div>
