@@ -73,9 +73,9 @@ export default function DashboardContent() {
   return (
     <div className="space-y-6">
       {/* Welcome section */}
-      <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Welcome to Inventory Optimizer</h1>
-        <p className="mt-1 text-gray-600 dark:text-gray-300">
+      <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Welcome to Inventory Optimizer</h1>
+        <p className="mt-1 text-sm sm:text-base text-gray-600 dark:text-gray-300">
           Manage and optimize your inventory across all locations from one central dashboard.
         </p>
       </div>
