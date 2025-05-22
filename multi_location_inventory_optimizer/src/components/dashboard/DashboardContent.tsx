@@ -95,7 +95,7 @@ export default function DashboardContent() {
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{activity.timestamp}</p>
                   </div>
                   <Badge 
-                    variant={statusBadge[activity.status as keyof typeof statusBadge].variant as any}
+                    variant={statusBadge[activity.status as keyof typeof statusBadge].variant as 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'}
                     size="sm"
                   >
                     {statusBadge[activity.status as keyof typeof statusBadge].text}
