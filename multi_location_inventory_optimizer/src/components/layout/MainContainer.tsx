@@ -59,13 +59,13 @@ export default function MainContainer({ children, pageTitle }: MainContainerProp
         <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
         {/* Main content */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-[1440px] w-full mx-auto">
+        <main className="flex-1 sm:p-6 lg:p-8 max-w-[1440px] w-full mx-auto">
           {/* Page title area */}
-          {pageTitle && (
+          {/* {pageTitle && (
             <div className="mb-4 sm:mb-6">
               <h1 className="text-xl sm:text-2xl font-bold text-[color:var(--text-primary)]">{pageTitle}</h1>
             </div>
-          )}
+          )} */}
           
           {/* Page content */}
           <div className="w-full bg-[color:var(--bg-component)] rounded-md shadow-sm p-4 sm:p-6 mb-6">
