@@ -54,21 +54,21 @@ export default function MainContainer({ children, pageTitle, userData }: MainCon
       <Header onToggleSidebar={toggleSidebar} />
 
       {/* Main content area with sidebar */}
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 relative overflow-hidden">
         {/* Sidebar */}
         <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
         {/* Main content */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+        <main className="flex-1 overflow-y-auto p-3 sm:p-5 lg:p-6 w-full">
           {/* Page title area */}
           {pageTitle && (
-            <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{pageTitle}</h1>
+            <div className="mb-4 sm:mb-6">
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{pageTitle}</h1>
             </div>
           )}
           
           {/* Page content */}
-          <div className="container mx-auto">
+          <div className="w-full mx-auto">
             {children}
           </div>
         </main>
