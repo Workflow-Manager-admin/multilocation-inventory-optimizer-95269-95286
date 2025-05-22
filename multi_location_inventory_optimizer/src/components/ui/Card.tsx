@@ -25,13 +25,13 @@ export default function Card({
   headerAction,
 }: CardProps) {
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden ${className}`}>
+    <div className={`bg-[color:var(--bg-component)] rounded-md shadow-sm border border-[color:var(--border-light)] overflow-hidden ${className}`}>
       {(title || subtitle || headerAction) && (
-        <div className="px-4 py-5 border-b border-gray-200 dark:border-gray-700 sm:px-6">
+        <div className="px-4 py-3 border-b border-[color:var(--border-light)] sm:px-5">
           <div className="flex items-center justify-between">
             <div>
-              {title && <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">{title}</h3>}
-              {subtitle && <p className="mt-1 max-w-2xl text-sm text-gray-500 dark:text-gray-400">{subtitle}</p>}
+              {title && <h3 className="text-base leading-6 font-medium text-[color:var(--text-primary)]">{title}</h3>}
+              {subtitle && <p className="mt-1 max-w-2xl text-xs text-[color:var(--text-secondary)]">{subtitle}</p>}
             </div>
             {headerAction && (
               <div className="ml-4">
@@ -42,12 +42,12 @@ export default function Card({
         </div>
       )}
       
-      <div className="px-3 py-3 sm:px-4 sm:py-4 md:p-6">
+      <div className="px-3 py-3 sm:px-4 sm:py-4">
         {children}
       </div>
       
       {footer && (
-        <div className="px-4 py-4 border-t border-gray-200 dark:border-gray-700 sm:px-6">
+        <div className="px-4 py-3 border-t border-[color:var(--border-light)] sm:px-5">
           {footer}
         </div>
       )}
