@@ -1,3 +1,5 @@
+"use client";
+
 // PUBLIC_INTERFACE
 /**
  * Card component for the MultiLocation Inventory Optimizer
