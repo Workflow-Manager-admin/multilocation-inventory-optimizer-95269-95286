@@ -51,6 +51,9 @@ module.exports = {
         semibold: '600',
         bold: '700',
       },
+      borderWidth: {
+        '3': '3px',
+      }
     },
   },
   plugins: [],
