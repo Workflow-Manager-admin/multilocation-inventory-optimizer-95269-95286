@@ -42,7 +42,7 @@ export default function Card({
         </div>
       )}
       
-      <div className="px-4 py-5 sm:p-6">
+      <div className="px-3 py-3 sm:px-4 sm:py-4 md:p-6">
         {children}
       </div>
       
