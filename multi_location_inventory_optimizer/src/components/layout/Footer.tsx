@@ -13,8 +13,8 @@ export default function Footer() {
   
   return (
     <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
-        <div className="flex justify-center space-x-6 md:order-2">
+      <div className="w-full mx-auto py-3 sm:py-4 px-3 sm:px-6 flex flex-col md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6 md:order-2">
           <Link 
             href="/help"
             className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
