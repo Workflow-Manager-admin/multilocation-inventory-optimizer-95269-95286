@@ -1,0 +1,4 @@
+{
+    "command": "npm run build",
+    "working_directory": "/home/kavia/workspace/code-generation/multilocation-inventory-optimizer-95269-95286/multi_location_inventory_optimizer"
+}
