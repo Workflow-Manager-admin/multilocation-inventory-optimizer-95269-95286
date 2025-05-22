@@ -34,7 +34,7 @@ interface MainContainerProps {
  * MainContainer serves as the primary layout wrapper for the MultiLocation Inventory Optimizer.
  * It handles the responsive layout with sidebar navigation, header, and footer.
  */
-export default function MainContainer({ children, pageTitle }: MainContainerProps) {
+export default function MainContainer({ children }: MainContainerProps) {
   // State to track sidebar visibility on mobile
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
