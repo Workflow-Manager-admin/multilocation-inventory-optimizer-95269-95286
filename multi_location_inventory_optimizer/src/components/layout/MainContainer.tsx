@@ -49,26 +49,26 @@ export default function MainContainer({ children, pageTitle }: MainContainerProp
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen bg-[color:var(--bg-canvas)]">
       {/* Header */}
       <Header onToggleSidebar={toggleSidebar} />
 
       {/* Main content area with sidebar */}
-      <div className="flex flex-1 relative overflow-hidden">
+      <div className="flex flex-1 relative">
         {/* Sidebar */}
         <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
 
         {/* Main content */}
-        <main className="flex-1 overflow-y-auto p-3 sm:p-5 lg:p-6 w-full">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-[1440px] w-full mx-auto">
           {/* Page title area */}
           {pageTitle && (
             <div className="mb-4 sm:mb-6">
-              <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{pageTitle}</h1>
+              <h1 className="text-xl sm:text-2xl font-bold text-[color:var(--text-primary)]">{pageTitle}</h1>
             </div>
           )}
           
           {/* Page content */}
-          <div className="w-full mx-auto">
+          <div className="w-full bg-[color:var(--bg-component)] rounded-md shadow-sm p-4 sm:p-6 mb-6">
             {children}
           </div>
         </main>
