@@ -135,7 +135,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         className={`
           fixed top-0 left-0 z-30 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
-          lg:translate-x-0 lg:relative lg:z-0
+          lg:translate-x-0 lg:sticky lg:top-0 lg:z-0 overflow-y-auto
         `}
       >
         {/* Sidebar header */}
