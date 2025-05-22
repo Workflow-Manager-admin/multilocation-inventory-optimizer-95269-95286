@@ -123,6 +123,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     }
   };
 
+  // Check if a path is active
   const isActive = (path: string) => {
     return pathname === path;
   };
