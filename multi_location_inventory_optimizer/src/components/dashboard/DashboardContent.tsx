@@ -89,17 +89,19 @@ export default function DashboardContent() {
           <Card title="Recent Activities">
             <div className="divide-y divide-gray-200 dark:divide-gray-700">
               {recentActivities.map((activity) => (
-                <div key={activity.id} className="py-3 flex justify-between items-start">
-                  <div>
+                <div key={activity.id} className="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <div className="flex-grow pr-2">
                     <p className="text-sm text-gray-900 dark:text-white">{activity.description}</p>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{activity.timestamp}</p>
                   </div>
-                  <Badge 
-                    variant={statusBadge[activity.status as keyof typeof statusBadge].variant as 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'}
-                    size="sm"
-                  >
-                    {statusBadge[activity.status as keyof typeof statusBadge].text}
-                  </Badge>
+                  <div className="flex-shrink-0">
+                    <Badge 
+                      variant={statusBadge[activity.status as keyof typeof statusBadge].variant as 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'}
+                      size="sm"
+                    >
+                      {statusBadge[activity.status as keyof typeof statusBadge].text}
+                    </Badge>
+                  </div>
                 </div>
               ))}
             </div>
