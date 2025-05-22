@@ -73,9 +73,9 @@ export default function DashboardContent() {
   return (
     <div className="space-y-6">
       {/* Welcome section */}
-      <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
-        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Welcome to Inventory Optimizer</h1>
-        <p className="mt-1 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+      <div>
+        <h1 className="text-xl sm:text-2xl font-bold text-[color:var(--text-primary)]">Welcome to Inventory Optimizer</h1>
+        <p className="mt-1 text-sm text-[color:var(--text-secondary)]">
           Manage and optimize your inventory across all locations from one central dashboard.
         </p>
       </div>
@@ -83,18 +83,18 @@ export default function DashboardContent() {
       {/* Inventory Summary */}
       <InventorySummary data={mockSummaryData} />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Recent Activity */}
-        <div className="lg:col-span-2">
+        <div className="md:col-span-2">
           <Card title="Recent Activities">
-            <div className="divide-y divide-gray-200 dark:divide-gray-700">
+            <div className="divide-y divide-[color:var(--border-light)]">
               {recentActivities.map((activity) => (
-                <div key={activity.id} className="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                <div key={activity.id} className="py-2 flex items-start justify-between gap-2">
                   <div className="flex-grow pr-2">
-                    <p className="text-sm text-gray-900 dark:text-white">{activity.description}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{activity.timestamp}</p>
+                    <p className="text-xs sm:text-sm text-[color:var(--text-primary)]">{activity.description}</p>
+                    <p className="text-xs text-[color:var(--text-tertiary)] mt-0.5">{activity.timestamp}</p>
                   </div>
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 pt-0.5">
                     <Badge 
                       variant={statusBadge[activity.status as keyof typeof statusBadge].variant as 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'}
                       size="sm"
@@ -106,7 +106,7 @@ export default function DashboardContent() {
               ))}
             </div>
             <div className="mt-4">
-              <Button variant="outline" fullWidth>
+              <Button variant="outline" size="sm" fullWidth>
                 View All Activities
               </Button>
             </div>
@@ -116,16 +116,16 @@ export default function DashboardContent() {
         {/* Inventory Distribution */}
         <div>
           <Card title="Inventory Distribution">
-            <div className="space-y-4">
+            <div className="space-y-3">
               {inventoryDistribution.map((item) => (
                 <div key={item.location} className="flex flex-col">
                   <div className="flex justify-between items-center mb-1">
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{item.location}</span>
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{item.percentage}%</span>
+                    <span className="text-xs font-medium text-[color:var(--text-primary)]">{item.location}</span>
+                    <span className="text-xs font-medium text-[color:var(--text-secondary)]">{item.percentage}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div className="w-full bg-[color:var(--bg-canvas)] rounded-full h-2">
                     <div 
-                      className={`${item.color} h-2.5 rounded-full`} 
+                      className={`${item.color} h-2 rounded-full`} 
                       style={{ width: `${item.percentage}%` }}
                     ></div>
                   </div>
@@ -133,7 +133,7 @@ export default function DashboardContent() {
               ))}
             </div>
             <div className="mt-4">
-              <Button variant="outline" fullWidth>
+              <Button variant="outline" size="sm" fullWidth>
                 View Detailed Report
               </Button>
             </div>
@@ -143,17 +143,17 @@ export default function DashboardContent() {
       
       {/* Quick Actions */}
       <Card title="Quick Actions">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          <Button variant="primary" fullWidth>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <Button variant="primary" size="sm" fullWidth>
             Add Product
           </Button>
-          <Button variant="secondary" fullWidth>
+          <Button variant="secondary" size="sm" fullWidth>
             Create Transfer
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" size="sm" fullWidth>
             Update Stock
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" size="sm" fullWidth>
             Generate Report
           </Button>
         </div>
