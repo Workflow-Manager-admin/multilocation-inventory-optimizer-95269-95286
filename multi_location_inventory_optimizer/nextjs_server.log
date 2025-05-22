@@ -13,3 +13,51 @@ You can learn more, including how to opt-out if you'd not like to participate in
 https://nextjs.org/telemetry
 
  ✓ Ready in 3.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 38.3s (818 modules)
+ ⚠ Blocked cross-origin request from vscode-internal-555987-beta.beta01.cloud.kavia.ai. To allow this, configure "allowedDevOrigins" in next.config
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 34105ms
+ GET / 200 in 14203ms
+ GET / 200 in 38703ms
+ ✓ Compiled in 4.8s (349 modules)
+ ✓ Compiled in 1398ms (349 modules)
+ ✓ Compiled in 1299ms (349 modules)
+ ✓ Compiled in 1102ms (349 modules)
+ ✓ Compiled in 1099ms (349 modules)
+ ✓ Compiled in 999ms (349 modules)
+ ✓ Compiled in 1300ms (349 modules)
+ ✓ Compiled in 1106ms (349 modules)
+ ✓ Compiled in 985ms (349 modules)
+ ✓ Compiled in 998ms (349 modules)
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 14.5s (816 modules)
+ GET /favicon.ico 200 in 14399ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 5.3s (820 modules)
+ GET /inventory 404 in 4597ms
+ GET /locations 404 in 4503ms
+ GET /products 404 in 2601ms
+ GET /transfers 404 in 1904ms
+ GET /reports 404 in 796ms
+ ✓ Compiled in 3.8s (820 modules)
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/kavia/workspace/code-generation/multilocation-inventory-optimizer-95269-95286/multi_location_inventory_optimizer/.next/server/next-font-manifest.json'] {
+  errno: -2,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: '/home/kavia/workspace/code-generation/multilocation-inventory-optimizer-95269-95286/multi_location_inventory_optimizer/.next/server/next-font-manifest.json',
+  page: '/'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/kavia/workspace/code-generation/multilocation-inventory-optimizer-95269-95286/multi_location_inventory_optimizer/.next/server/next-font-manifest.json'] {
+  errno: -2,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: '/home/kavia/workspace/code-generation/multilocation-inventory-optimizer-95269-95286/multi_location_inventory_optimizer/.next/server/next-font-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/kavia/workspace/code-generation/multilocation-inventory-optimizer-95269-95286/multi_location_inventory_optimizer/.next/server/next-font-manifest.json'] {
+  errno: -2,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: '/home/kavia/workspace/code-generation/multilocation-inventory-optimizer-95269-95286/multi_location_inventory_optimizer/.next/server/next-font-manifest.json'
+}
+ ○ Compiling /_error ...
