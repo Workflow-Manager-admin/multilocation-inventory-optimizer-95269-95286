@@ -7,6 +7,7 @@
  */
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { NavItem } from '@/types';
 
 interface SidebarProps {
@@ -15,6 +16,8 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const pathname = usePathname();
+  
   // Navigation items
   const navItems: NavItem[] = [
     {
@@ -120,6 +123,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     }
   };
 
+  const isActive = (path: string) => {
+    return pathname === path;
+  };
+
   return (
     <>
       {/* Mobile backdrop */}
@@ -127,31 +134,33 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         <div 
           className="fixed inset-0 z-20 bg-gray-900/50 lg:hidden"
           onClick={onClose}
+          aria-hidden="true"
         ></div>
       )}
 
       {/* Sidebar */}
       <aside
         className={`
-          fixed top-0 left-0 z-30 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 ease-in-out
+          fixed top-0 left-0 z-30 h-full w-60 bg-[color:var(--bg-component)] border-r border-[color:var(--border-light)]
+          transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
           lg:translate-x-0 lg:sticky lg:top-0 lg:z-0 overflow-y-auto
         `}
       >
         {/* Sidebar header */}
-        <div className="h-16 flex items-center justify-between px-4 border-b border-gray-200 dark:border-gray-700">
+        <div className="h-14 flex items-center px-4 border-b border-[color:var(--border-light)]">
           <Link href="/" className="flex items-center space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[color:var(--primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10" />
             </svg>
-            <span className="text-lg font-bold text-gray-900 dark:text-white">Inventory</span>
+            <span className="text-lg font-semibold text-[color:var(--text-primary)]">Inventory</span>
           </Link>
 
           <button
-            className="lg:hidden p-2 rounded-md text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"
+            className="lg:hidden ml-auto p-2 rounded-md text-[color:var(--text-secondary)] hover:bg-[color:var(--bg-canvas)] focus:outline-none"
             onClick={onClose}
+            aria-label="Close sidebar"
           >
-            <span className="sr-only">Close sidebar</span>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -159,14 +168,19 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         {/* Navigation */}
-        <nav className="p-4 space-y-1">
+        <nav className="py-4 px-2 space-y-1">
           {navItems.map((item) => (
             <Link
               key={item.id}
               href={item.path}
-              className="group flex items-center px-2 py-2 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
+              className={`
+                flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors duration-150 ease-in-out
+                ${isActive(item.path) 
+                  ? 'text-[color:var(--primary)] bg-blue-50 dark:bg-blue-900/10 border-l-[3px] border-[color:var(--primary)]' 
+                  : 'text-[color:var(--text-secondary)] hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-[color:var(--text-primary)]'}
+              `}
             >
-              <div className="mr-3 text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300">
+              <div className={`mr-3 ${isActive(item.path) ? 'text-[color:var(--primary)]' : 'text-[color:var(--text-secondary)]'}`}>
                 {renderIcon(item.icon || '')}
               </div>
               {item.title}
@@ -175,16 +189,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         </nav>
 
         {/* Sidebar footer */}
-        <div className="absolute bottom-0 w-full p-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="absolute bottom-0 w-full p-4 border-t border-[color:var(--border-light)] bg-[color:var(--bg-component)]">
           <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
-            <div className="text-sm font-medium text-gray-700 dark:text-gray-200">
+            <div className="text-sm font-medium text-[color:var(--text-primary)]">
               User Name
-              <p className="text-xs text-gray-500 dark:text-gray-400">Administrator</p>
+              <p className="text-xs text-[color:var(--text-secondary)]">Administrator</p>
             </div>
           </div>
         </div>
