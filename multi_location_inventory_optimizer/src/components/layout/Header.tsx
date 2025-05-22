@@ -1,3 +1,5 @@
+"use client";
+
 // PUBLIC_INTERFACE
 /**
  * Header component for the MultiLocation Inventory Optimizer
