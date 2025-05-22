@@ -6,7 +6,6 @@
  * Displays summary of inventory statistics and key metrics
  */
 import React from 'react';
-import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import { InventorySummary as InventorySummaryType } from '@/types';
 
