@@ -44,9 +44,9 @@ export default function Button({
   
   // Size styles
   const sizeStyles = {
-    sm: 'py-1 px-3 text-sm',
-    md: 'py-2 px-4 text-base',
-    lg: 'py-3 px-6 text-lg',
+    sm: 'py-1 px-2 sm:px-3 text-sm',
+    md: 'py-1.5 sm:py-2 px-3 sm:px-4 text-sm sm:text-base',
+    lg: 'py-2 sm:py-3 px-4 sm:px-6 text-base sm:text-lg',
   };
 
   // Loading and disabled styles
