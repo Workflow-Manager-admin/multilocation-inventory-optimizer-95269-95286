@@ -12,36 +12,36 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-      <div className="w-full mx-auto py-3 sm:py-4 px-3 sm:px-6 flex flex-col md:flex-row md:items-center md:justify-between lg:px-8">
-        <div className="flex flex-wrap justify-center space-x-4 sm:space-x-6 md:order-2">
+    <footer className="bg-[color:var(--bg-component)] border-t border-[color:var(--border-light)]">
+      <div className="w-full mx-auto py-3 px-4 sm:px-6 flex flex-col md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="flex flex-wrap justify-center md:order-2 space-x-4">
           <Link 
             href="/help"
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            className="text-xs text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] transition-colors"
           >
             Help
           </Link>
           <Link 
             href="/privacy"
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            className="text-xs text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] transition-colors"
           >
             Privacy
           </Link>
           <Link 
             href="/terms"
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            className="text-xs text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] transition-colors"
           >
             Terms
           </Link>
           <Link 
             href="/contact"
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+            className="text-xs text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] transition-colors"
           >
             Contact
           </Link>
         </div>
-        <div className="mt-4 md:mt-0 md:order-1">
-          <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="mt-2 md:mt-0 md:order-1">
+          <p className="text-center text-xs text-[color:var(--text-secondary)]">
             &copy; {currentYear} MultiLocation Inventory Optimizer. All rights reserved.
           </p>
         </div>
