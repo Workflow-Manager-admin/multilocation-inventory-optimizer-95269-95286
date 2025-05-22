@@ -1,3 +1,5 @@
+"use client";
+
 // PUBLIC_INTERFACE
 /**
  * InventorySummary component for the MultiLocation Inventory Optimizer
